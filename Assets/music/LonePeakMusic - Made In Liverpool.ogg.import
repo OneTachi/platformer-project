@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/LonePeakMusic - Made In Liverpool.ogg-e1f2c4197b2a89e9225e38d37b8b80ab.oggstr"
+
+[deps]
+
+source_file="res://Assets/music/LonePeakMusic - Made In Liverpool.ogg"
+dest_files=[ "res://.import/LonePeakMusic - Made In Liverpool.ogg-e1f2c4197b2a89e9225e38d37b8b80ab.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

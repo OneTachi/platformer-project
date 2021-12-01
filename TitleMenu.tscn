@@ -1,0 +1,442 @@
+[gd_scene load_steps=26 format=2]
+
+[ext_resource path="res://Assets/more fonts/Sniglet-Regular.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://Assets/more fonts/KiriFont.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://Assets/HUD/coin_gold.png" type="Texture" id=3]
+[ext_resource path="res://Assets/UI/arrow-UP.png" type="Texture" id=4]
+[ext_resource path="res://Assets/UI/grey_button13.png" type="Texture" id=5]
+[ext_resource path="res://Assets/enemies/slimeBlue_blue.png" type="Texture" id=6]
+[ext_resource path="res://Assets/player/platformChar_idle.png" type="Texture" id=7]
+[ext_resource path="res://Assets/UI/grey_button04.png" type="Texture" id=8]
+[ext_resource path="res://Button.gd" type="Script" id=9]
+[ext_resource path="res://Assets/music/Swinging Pants.ogg" type="AudioStream" id=10]
+[ext_resource path="res://TitleMenu.gd" type="Script" id=11]
+
+[sub_resource type="DynamicFont" id=1]
+size = 1
+outline_size = 4
+outline_color = Color( 0.164706, 0.490196, 0.631373, 1 )
+font_data = ExtResource( 2 )
+
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 0.14902, 0.12549, 0.12549, 0.298039 )
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="DynamicFont" id=3]
+size = 28
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 24
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=5]
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=6]
+size = 24
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=7]
+size = 30
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=8]
+size = 28
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=9]
+size = 20
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=10]
+size = 20
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=11]
+size = 20
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=12]
+size = 1
+use_filter = true
+font_data = ExtResource( 2 )
+
+[sub_resource type="Animation" id=13]
+resource_name = "buttons"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("PlayButton:rect_rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 5.0, -5.0 ]
+}
+
+[sub_resource type="Animation" id=14]
+tracks/0/type = "value"
+tracks/0/path = NodePath("Label:custom_fonts/font:size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 1, 54 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Panel:rect_scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( 1, 1 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Panel2:rect_scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( 1, 1 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("PlayButton:custom_fonts/font:size")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 1, 54 ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("PlayButton:rect_rotation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 5.0, -5.0 ]
+}
+
+[node name="TitleMenu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 11 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_right = 1024.0
+margin_bottom = 600.0
+color = Color( 0.188235, 0, 0.439216, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+margin_left = 207.788
+margin_top = 91.8423
+margin_right = 836.788
+margin_bottom = 200.842
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0.607843, 0.690196, 0.913725, 1 )
+text = "Platformer Game!"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="."]
+margin_left = 28.4387
+margin_top = 360.685
+margin_right = 344.439
+margin_bottom = 543.685
+rect_scale = Vector2( 1e-05, 1e-05 )
+rect_pivot_offset = Vector2( 100, 100 )
+custom_styles/panel = SubResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="Panel"]
+margin_left = 38.2866
+margin_top = 81.6708
+margin_right = 151.287
+margin_bottom = 108.671
+texture = ExtResource( 8 )
+expand = true
+
+[node name="Jump" type="Label" parent="Panel"]
+margin_left = 196.376
+margin_top = 83.8513
+margin_right = 295.376
+margin_bottom = 112.851
+custom_fonts/font = SubResource( 3 )
+text = "Jump!"
+
+[node name="Move" type="Label" parent="Panel"]
+margin_left = 137.192
+margin_top = 135.543
+margin_right = 236.192
+margin_bottom = 164.543
+custom_fonts/font = SubResource( 4 )
+text = "Move!"
+
+[node name="Space" type="Label" parent="Panel"]
+margin_left = 64.4946
+margin_top = 87.9703
+margin_right = 125.495
+margin_bottom = 104.97
+custom_fonts/font = SubResource( 5 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Space"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="=" type="Label" parent="Panel"]
+margin_left = 171.103
+margin_top = 81.5786
+margin_right = 211.103
+margin_bottom = 111.579
+custom_fonts/font = SubResource( 6 )
+text = "="
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="=2" type="Label" parent="Panel"]
+margin_left = 115.291
+margin_top = 133.645
+margin_right = 155.291
+margin_bottom = 163.645
+custom_fonts/font = SubResource( 6 )
+text = "="
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ArrowBox2" type="TextureRect" parent="Panel"]
+margin_left = 45.0812
+margin_top = 137.541
+margin_right = 67.0812
+margin_bottom = 159.541
+texture = ExtResource( 5 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ArrowBox" type="TextureRect" parent="Panel"]
+margin_left = 81.3039
+margin_top = 137.541
+margin_right = 103.304
+margin_bottom = 159.541
+texture = ExtResource( 5 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Arrow2" type="TextureRect" parent="Panel"]
+margin_left = 101.407
+margin_top = 139.304
+margin_right = 119.407
+margin_bottom = 157.304
+rect_rotation = 89.02
+texture = ExtResource( 4 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Arrow1" type="TextureRect" parent="Panel"]
+margin_left = 63.8878
+margin_top = 139.304
+margin_right = 81.8878
+margin_bottom = 157.304
+rect_rotation = 89.02
+texture = ExtResource( 4 )
+expand = true
+flip_v = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Controls" type="Label" parent="Panel"]
+margin_left = 29.217
+margin_top = 18.7288
+margin_right = 69.217
+margin_bottom = 32.7288
+custom_fonts/font = SubResource( 7 )
+custom_colors/font_color = Color( 0.129412, 0.741176, 0.952941, 1 )
+text = "Controls:"
+
+[node name="Panel2" type="Panel" parent="."]
+margin_left = 675.584
+margin_top = 360.685
+margin_right = 991.584
+margin_bottom = 543.685
+rect_scale = Vector2( 1e-05, 1e-05 )
+rect_pivot_offset = Vector2( 100, 100 )
+custom_styles/panel = SubResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="items" type="Label" parent="Panel2"]
+margin_left = 24.0
+margin_top = 20.0
+margin_right = 220.0
+margin_bottom = 58.0
+custom_fonts/font = SubResource( 8 )
+custom_colors/font_color = Color( 0.129412, 0.741176, 0.952941, 1 )
+text = "Items:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="Panel2"]
+margin_left = 14.8061
+margin_top = 55.7145
+margin_right = 58.8061
+margin_bottom = 99.7145
+texture = ExtResource( 7 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect2" type="TextureRect" parent="Panel2"]
+margin_left = 26.5198
+margin_top = 112.4
+margin_right = 46.5198
+margin_bottom = 132.4
+texture = ExtResource( 6 )
+expand = true
+flip_h = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect3" type="TextureRect" parent="Panel2"]
+margin_left = 157.206
+margin_top = 142.265
+margin_right = 187.206
+margin_bottom = 172.265
+texture = ExtResource( 3 )
+expand = true
+flip_h = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="=3" type="Label" parent="Panel2"]
+margin_left = 75.1627
+margin_top = 68.0888
+margin_right = 115.163
+margin_bottom = 98.0888
+custom_fonts/font = SubResource( 6 )
+text = "="
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="=4" type="Label" parent="Panel2"]
+margin_left = 75.1627
+margin_top = 110.041
+margin_right = 115.163
+margin_bottom = 140.041
+custom_fonts/font = SubResource( 6 )
+text = "="
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="you" type="Label" parent="Panel2"]
+margin_left = 120.248
+margin_top = 73.158
+margin_right = 182.248
+margin_bottom = 94.158
+custom_fonts/font = SubResource( 9 )
+text = "You!"
+
+[node name="enemies" type="Label" parent="Panel2"]
+margin_left = 114.551
+margin_top = 111.953
+margin_right = 220.551
+margin_bottom = 132.953
+custom_fonts/font = SubResource( 10 )
+text = "Enemies!"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Panel2"]
+margin_left = 20.1262
+margin_top = 148.953
+margin_right = 285.126
+margin_bottom = 169.953
+custom_fonts/font = SubResource( 11 )
+text = "Collect 3     to Win"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PlayButton" type="Button" parent="."]
+margin_left = 344.0
+margin_top = 213.079
+margin_right = 667.0
+margin_bottom = 318.079
+rect_rotation = 5.0
+rect_pivot_offset = Vector2( 161, 52 )
+focus_mode = 0
+mouse_default_cursor_shape = 2
+custom_fonts/font = SubResource( 12 )
+custom_colors/font_color = Color( 0.109804, 0.929412, 0.219608, 1 )
+custom_colors/font_color_hover = Color( 0.94902, 0.0941176, 0.756863, 1 )
+custom_colors/font_color_pressed = Color( 0.92549, 0.0745098, 0.0745098, 1 )
+enabled_focus_mode = 0
+text = "Play!"
+flat = true
+script = ExtResource( 9 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MenuScreenMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 10 )
+volume_db = -15.0
+autoplay = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/buttons = SubResource( 13 )
+anims/zoom = SubResource( 14 )
+[connection signal="pressed" from="PlayButton" to="PlayButton" method="_on_PlayButton_pressed"]
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_finished"]

@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/knifeSlice.ogg-4e3fa17b2a15d20ee6b7370e42b0d8ab.oggstr"
+
+[deps]
+
+source_file="res://Assets/sounds/kenney_rpgaudio/Audio/knifeSlice.ogg"
+dest_files=[ "res://.import/knifeSlice.ogg-4e3fa17b2a15d20ee6b7370e42b0d8ab.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

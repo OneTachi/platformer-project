@@ -1,0 +1,174 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://HUDPanel.tres" type="StyleBox" id=1]
+[ext_resource path="res://HUDcoins.tres" type="DynamicFont" id=2]
+[ext_resource path="res://Assets/HUD/coin_gold.png" type="Texture" id=3]
+[ext_resource path="res://Hudx.tres" type="DynamicFont" id=4]
+[ext_resource path="res://HUD.gd" type="Script" id=5]
+[ext_resource path="res://Assets/items/platformPack_item017.png" type="Texture" id=6]
+
+[node name="HUD" type="CanvasLayer"]
+script = ExtResource( 5 )
+
+[node name="backpanel" type="Panel" parent="."]
+margin_left = 20.0
+margin_top = 8.0
+margin_right = 176.0
+margin_bottom = 148.0
+custom_styles/panel = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="x" type="Label" parent="backpanel"]
+margin_left = 74.445
+margin_top = 14.345
+margin_right = 114.445
+margin_bottom = 57.345
+custom_fonts/font = ExtResource( 4 )
+custom_colors/font_color = Color( 0.866667, 0.737255, 0.223529, 1 )
+text = "x"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="x2" type="Label" parent="backpanel"]
+modulate = Color( 0.956863, 0.0901961, 0.0901961, 1 )
+margin_left = 74.445
+margin_top = 76.0
+margin_right = 114.445
+margin_bottom = 119.0
+custom_fonts/font = ExtResource( 4 )
+custom_colors/font_color = Color( 0.866667, 0.737255, 0.223529, 1 )
+text = "x"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="cointexture" type="TextureRect" parent="backpanel"]
+margin_left = 7.0
+margin_top = 9.673
+margin_right = 61.0
+margin_bottom = 61.673
+texture = ExtResource( 3 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Coins" type="Label" parent="backpanel"]
+margin_left = 94.109
+margin_top = 9.603
+margin_right = 152.109
+margin_bottom = 64.603
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0.866667, 0.737255, 0.223529, 1 )
+text = "##"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Hearts" type="Label" parent="backpanel"]
+modulate = Color( 0.956863, 0.0901961, 0.0901961, 1 )
+margin_left = 94.109
+margin_top = 71.9659
+margin_right = 152.109
+margin_bottom = 126.966
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0.866667, 0.737255, 0.223529, 1 )
+text = "##"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="backpanel"]
+margin_left = -16.9097
+margin_top = 48.6164
+margin_right = 83.0903
+margin_bottom = 148.616
+texture = ExtResource( 6 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="rempanel" type="Panel" parent="."]
+margin_left = 848.0
+margin_top = 8.0
+margin_right = 1004.0
+margin_bottom = 148.0
+custom_styles/panel = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="cointexture2" type="TextureRect" parent="rempanel"]
+margin_left = 5.78674
+margin_top = 9.18771
+margin_right = 59.7867
+margin_bottom = 61.1877
+texture = ExtResource( 3 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="bonustexture" type="TextureRect" parent="rempanel"]
+self_modulate = Color( 0.792157, 0.321569, 0.321569, 1 )
+margin_left = 5.787
+margin_top = 74.241
+margin_right = 59.787
+margin_bottom = 126.241
+texture = ExtResource( 3 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="x3" type="Label" parent="rempanel"]
+margin_left = 73.2318
+margin_top = 13.8597
+margin_right = 113.232
+margin_bottom = 56.8597
+custom_fonts/font = ExtResource( 4 )
+custom_colors/font_color = Color( 0.866667, 0.737255, 0.223529, 1 )
+text = ":"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Coins2" type="Label" parent="rempanel"]
+margin_left = 92.8958
+margin_top = 9.11771
+margin_right = 150.896
+margin_bottom = 64.1177
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0.866667, 0.737255, 0.223529, 1 )
+text = "##"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="x4" type="Label" parent="rempanel"]
+margin_left = 73.232
+margin_top = 77.499
+margin_right = 113.232
+margin_bottom = 120.499
+custom_fonts/font = ExtResource( 4 )
+custom_colors/font_color = Color( 0.792157, 0.321569, 0.321569, 1 )
+text = ":"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="bonusCoins" type="Label" parent="rempanel"]
+margin_left = 92.896
+margin_top = 72.757
+margin_right = 150.896
+margin_bottom = 127.757
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0.792157, 0.321569, 0.321569, 1 )
+text = "##"
+__meta__ = {
+"_edit_use_anchors_": false
+}

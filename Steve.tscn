@@ -1,0 +1,55 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://steve_spriteframes.tres" type="SpriteFrames" id=1]
+[ext_resource path="res://Steve.gd" type="Script" id=2]
+[ext_resource path="res://Assets/sounds/jump1.ogg" type="AudioStream" id=3]
+[ext_resource path="res://Assets/sounds/kenney_rpgaudio/Audio/footstep05.ogg" type="AudioStream" id=4]
+[ext_resource path="res://Assets/other tiles/AnotherLight.png" type="Texture" id=5]
+
+[sub_resource type="CapsuleShape2D" id=1]
+radius = 26.3522
+height = 14.9719
+
+[node name="Steve" type="KinematicBody2D"]
+collision_mask = 30
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="AnimatedSprite" parent="."]
+light_mask = 2
+frames = ExtResource( 1 )
+animation = "wall"
+playing = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0, 15 )
+shape = SubResource( 1 )
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+
+[node name="SoundJump" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+volume_db = -30.0
+
+[node name="SoundWalk" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 4 )
+volume_db = -10.0
+pitch_scale = 0.75
+
+[node name="wall_check" type="RayCast2D" parent="."]
+position = Vector2( 0, 15.25 )
+rotation = -1.5708
+scale = Vector2( 1, 0.5 )
+enabled = true
+cast_to = Vector2( 0, 60 )
+collision_mask = 2
+
+[node name="Light2D" type="Light2D" parent="."]
+scale = Vector2( 10, 10 )
+enabled = false
+texture = ExtResource( 5 )
+mode = 3
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

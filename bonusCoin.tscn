@@ -1,0 +1,34 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://coin_spriteframes.tres" type="SpriteFrames" id=1]
+[ext_resource path="res://bounce.tres" type="Animation" id=2]
+[ext_resource path="res://coin.gd" type="Script" id=3]
+[ext_resource path="res://Assets/sounds/powerUp2.ogg" type="AudioStream" id=4]
+
+
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 43.8377
+
+[node name="bonusCoin" type="Area2D"]
+collision_layer = 0
+script = ExtResource( 3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+self_modulate = Color( 0.792157, 0.321569, 0.321569, 1 )
+frames = ExtResource( 1 )
+animation = "spin"
+frame = 1
+playing = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/bounce = ExtResource( 2 )
+
+[node name="SoundCollect" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+volume_db = -5.0
+[connection signal="body_entered" from="." to="." method="_on_coin_body_entered"]
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]

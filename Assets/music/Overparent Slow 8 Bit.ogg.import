@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Overparent Slow 8 Bit.ogg-c1dcd58e485501e4a6246f4bd82b2fcc.oggstr"
+
+[deps]
+
+source_file="res://Assets/music/Overparent Slow 8 Bit.ogg"
+dest_files=[ "res://.import/Overparent Slow 8 Bit.ogg-c1dcd58e485501e4a6246f4bd82b2fcc.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

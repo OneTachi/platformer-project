@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Assets/music/Overparent Slow 8 Bit.ogg" type="AudioStream" id=1]
+[ext_resource path="res://Scripts/MusicController.gd" type="Script" id=2]
+[ext_resource path="res://Assets/music/Retro Beat.ogg" type="AudioStream" id=3]
+[ext_resource path="res://Assets/music/Overparent Slow Theme.ogg" type="AudioStream" id=4]
+
+[node name="MusicController" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="MusicCave" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 1 )
+volume_db = -14.0
+
+[node name="MusicLevel2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+volume_db = -14.0
+
+[node name="MusicLevel1" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+volume_db = -7.0
